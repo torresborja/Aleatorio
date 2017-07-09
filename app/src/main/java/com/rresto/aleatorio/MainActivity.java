@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void MyClickButton(View target) {
 
-        /*
+        /* JAR
         //Elijo número aleatorio
         int rangoNumero = numberPicker.getValue();
         int numero = (int) (Math.random() *rangoNumero) + 1;
