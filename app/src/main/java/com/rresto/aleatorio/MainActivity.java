@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.INVISIBLE);
 
                 //Activo el texto
-                String stringNumeroElegido = "El número elegido es: " + String.valueOf(numero);
+                //String stringNumeroElegido = "El número elegido es: " + String.valueOf(numero);
+                String stringNumeroElegido= getString (R.string.elNumeroElegidoEs) + String.valueOf(numero);
                 numeroElegido.setText(stringNumeroElegido);
                 numeroElegido.setVisibility(View.VISIBLE);
             }

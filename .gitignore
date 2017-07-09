@@ -7,3 +7,6 @@
 /build
 /captures
 .externalNativeBuild
+/app/aleatorio.apk
+/app/src/androidTest/java/com/rresto/aleatorio/
+/app/src/test/java/com/rresto/aleatorio/
