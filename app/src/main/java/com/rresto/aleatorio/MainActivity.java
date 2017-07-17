@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         numeroElegido = (TextView) findViewById(R.id.textViewNumeroElegido);
+        button = (Button) findViewById(R.id.button);
 
         //Ajustamos los controles
         numberPicker.setMinValue(1);
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         //Pongo pausa
         progressBar.setVisibility(View.VISIBLE);
         numeroElegido.setVisibility(View.INVISIBLE);
+        //button.setClickable(false);
         button.setEnabled(false);
 
         final Handler handler = new Handler();
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 String stringNumeroElegido= getString (R.string.elNumeroElegidoEs) + String.valueOf(numero);
                 numeroElegido.setText(stringNumeroElegido);
                 numeroElegido.setVisibility(View.VISIBLE);
+                //button.setClickable(true);
                 button.setEnabled(true);
             }
         }, delayMillis);
