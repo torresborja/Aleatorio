@@ -1,11 +1,8 @@
 package com.rresto.aleatorio;
 
-import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatButton;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
@@ -15,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     //Constantes
-    final static long delayMillis = 3000; //3 Segundos
+    final static long delayMillis = 3000; //3 Segundos, tiempo en milisegundos
 
     //Variables
     NumberPicker numberPicker;
@@ -32,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         numeroElegido = (TextView) findViewById(R.id.textViewNumeroElegido);
+        button = (Button) findViewById(R.id.button);
 
         //Ajustamos los controles
         numberPicker.setMinValue(1);
@@ -55,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         //Pongo pausa
         progressBar.setVisibility(View.VISIBLE);
         numeroElegido.setVisibility(View.INVISIBLE);
+        button.setEnabled(false);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -71,16 +70,9 @@ public class MainActivity extends AppCompatActivity {
                 String stringNumeroElegido= getString (R.string.elNumeroElegidoEs) + String.valueOf(numero);
                 numeroElegido.setText(stringNumeroElegido);
                 numeroElegido.setVisibility(View.VISIBLE);
+                button.setEnabled(true);
             }
         }, delayMillis);
 
-        /*
-        progressBar.setVisibility(View.INVISIBLE);
-
-        //Activo el texto
-        String stringNumeroElegido = "El número elegido es: " + String.valueOf(numero);
-        numeroElegido.setText(stringNumeroElegido);
-        numeroElegido.setVisibility(View.VISIBLE);
-        */
     }
 }
