@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         //Pongo pausa
         progressBar.setVisibility(View.VISIBLE);
         numeroElegido.setVisibility(View.INVISIBLE);
+        button.setEnabled(false);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 String stringNumeroElegido= getString (R.string.elNumeroElegidoEs) + String.valueOf(numero);
                 numeroElegido.setText(stringNumeroElegido);
                 numeroElegido.setVisibility(View.VISIBLE);
+                button.setEnabled(true);
             }
         }, delayMillis);
 
